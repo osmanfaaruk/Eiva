@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
-import { KeyboardAvoidingView } from "react-native";
+import React, { useEffect, useState } from "react";
+import { KeyboardAvoidingView, StyleSheet, View } from "react-native";
+import { Button, Image, Input } from "react-native-elements";
 import { auth } from "../firebase.config";
 
 const LoginScreen = ({ navigation }) => {

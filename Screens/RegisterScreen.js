@@ -1,8 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
-import { StatusBar } from "react-native";
-import { KeyboardAvoidingView } from "react-native";
-import { StyleSheet, View } from "react-native";
-import { Input, Text, Button } from "react-native-elements";
+import { KeyboardAvoidingView, StatusBar, StyleSheet, View } from "react-native";
+import { Button, Input, Text } from "react-native-elements";
 import { auth } from "../firebase.config";
 
 const RegisterScreen = ({ navigation }) => {
