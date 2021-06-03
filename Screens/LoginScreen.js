@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 import { KeyboardAvoidingView } from "react-native";
+import { auth } from "../firebase.config";
 
 const LoginScreen = ({ navigation }) => {
-  const signIn = () => {};
+  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+     const unsubscribe =  auth.onAuthStateChanged((authUser) => {
+          if(authUser){
+              navigation.replace("Home")
+          }
+      });
+
+      return unsubscribe;
+  }, []);
+
+  const signIn = () => {
+        auth.signInWithEmailAndPassword(email, password).catch(error => alert(error));
+};
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -23,7 +38,6 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.inputContainer}>
         <Input
           placeholder="Email"
-          autoFocus
           type="email"
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -31,9 +45,9 @@ const LoginScreen = ({ navigation }) => {
         <Input
           placeholder="Password"
           secureTextEntry
-          autoFocus
           type="Password"
           onChangeText={(text) => setPassword(text)}
+          onSubmitEditing={signIn}
         />
       </View>
       <Button title="Login" containerStyle={styles.button} onPress={signIn} />

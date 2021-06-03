@@ -20,9 +20,9 @@ const RegisterScreen = ({ navigation }) => {
 
   const register = () => {
       auth
-      .createUserWithPasswordAndEmail(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
-            authUser.user.update({
+            authUser.user.updateProfile({
                 displayName:name,
                 photoURL:imageUrl || "https://image.freepik.com/free-vector/angry-bearded-man-vector_83738-280.jpg",
             });
@@ -57,7 +57,6 @@ const RegisterScreen = ({ navigation }) => {
         />
         <Input
           placeholder="Image (Optional)"
-          autoFocus
           type="text"
           value={imageUrl}
           onChangeText={(text) => setImageUrl(text)}
