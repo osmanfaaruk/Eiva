@@ -33,7 +33,7 @@ const RegisterScreen = ({ navigation }) => {
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar style="light" />
       <Text h4 stye={{ marginBottom: 100 }}>
-        Create a Signal account
+        Register To Eiva
       </Text>
       <View style={styles.inputContainer}>
         <Input
@@ -56,7 +56,7 @@ const RegisterScreen = ({ navigation }) => {
           onChangeText={(text) => setPassword(text)}
         />
         <Input
-          placeholder="Image"
+          placeholder="Image (Optional)"
           autoFocus
           type="text"
           value={imageUrl}

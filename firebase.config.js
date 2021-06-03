@@ -1,3 +1,7 @@
+import * as firebase from "firebase"
+import "firebase"
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyClfXdpnt7uccC93mjeKXqwRwg40jLQBV4",
     authDomain: "eiva-e-commerce.firebaseapp.com",
