@@ -6,7 +6,7 @@
 - ## create chat groups
 
 ## Using Technology
-- react native
+- React native
 - expo
 - firebase
 - expo/vector-icons
