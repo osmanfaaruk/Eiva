@@ -9,3 +9,4 @@
 - react native
 - expo
 - firebase
+- expo/vector-icons
